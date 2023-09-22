@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EntityController;
 use App\Http\Controllers\ModuleController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -20,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::resource('module', ModuleController::class);
+Route::resource('module/{moduleName}', EntityController::class);

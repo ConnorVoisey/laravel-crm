@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\DB;
 class Module extends Model
 {
     use HasFactory;
+    public function getKeyType()
+    {
+        return 'string';
+    }
     public static function build(string $name, string $label)
     {
         // create the table
@@ -28,5 +32,9 @@ SQL;
         $module->label = $label;
         $module->save();
         return $module;
+    }
+    public static function findByName(string $name)
+    {
+        return Module::where('name', $name)->first();
     }
 }
