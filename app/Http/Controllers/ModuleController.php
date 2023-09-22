@@ -13,7 +13,7 @@ class ModuleController extends Controller
      */
     public function index()
     {
-        //
+        return Module::get();
     }
 
     /**

@@ -21,4 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::resource('module', ModuleController::class);
-Route::resource('module/{moduleName}', EntityController::class);
+Route::post('module/{moduleName}', [EntityController::class, 'store']);
